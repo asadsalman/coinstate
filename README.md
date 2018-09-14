@@ -1,5 +1,5 @@
 # CoinState
-CoinState is a log of the local state of a Bitcoin node. Get it [here](https://drive.google.com/drive/folders/1_taGoCphJeH4JspP5D3JuT7vwTRQp4MS?usp=sharing).
+CoinState is a log of transactions entering and leaving the mempool of a Bitcoin node. It can be used to reconstruct local Bitcoin client state and do various simulations, experiments and forensic analysis of the network. Get it [here](https://drive.google.com/drive/folders/1_taGoCphJeH4JspP5D3JuT7vwTRQp4MS?usp=sharing).
 
 Logs start on the 8th May 2018 and run till 6th September 2018 (122 days). Each file is a compressed log of the day and numbered from 0 to 121.
 
