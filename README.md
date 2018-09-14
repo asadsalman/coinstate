@@ -25,6 +25,24 @@ Schema of entry file:
         "index": <index of txout being used>
       }
     }
+    .
+    .
+    .
   ]
 }
 ```
+
+The exit file is the same as the entry, except for:
+1. reason value
+2. time value
+
+The `time` value is the time the transaction *exited* the mempool. And the `reason` value is the reason the exit happened. It can be one of 7 possible values:
+* **UNKNOWN** Manually removed or unknown reason)
+* **EXPIRY** (Expired from mempool)
+* **SIZELIMIT** (Removed in size limiting)
+* **REORG** (Removed for reorganization)
+* **BLOCK** (Removed for block)
+* **CONFLICT** (Removed for conflict with in-block transaction)
+* **REPLACED** (Removed for replacement)
+
+A lot of the above schema has been directly taken from Bitcoin's codebase: [txmempool.h](https://github.com/bitcoin/bitcoin/blob/master/src/txmempool.h).
