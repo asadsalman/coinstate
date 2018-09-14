@@ -9,15 +9,15 @@ Schema of entry file:
   "type": <ENTRY or EXIT>,
   "hash": <hash of tx>,
   "ancestor_count": <number of in-mempool ancestors>,
-  "ancestor_size": <size of ancestors>,
-  "ancestor_fee": <total fee of ancestors (including current tx)>,
+  "ancestor_size": <size of ancestors (in bytes)>,
+  "ancestor_fee": <total fee of ancestors (including current tx) (in satoshis)>,
   "descendant_count": <number of in-mempool descendant>,
-  "descendant_size": <size of descendants>,
-  "descendant_fee": <total fee of descendants (including current tx)>,
-  "time": <local time when entering the mempool>,
+  "descendant_size": <size of descendants (in bytes)>,
+  "descendant_fee": <total fee of descendants (including current tx) (in satoshis)>,
+  "time": <local timestamp when entering the mempool>,
   "size": <size of tx>,
   "amount": <sum of txouts>,
-  "fee": <miner fee>,
+  "fee": <miner fee (in satoshis)>,
   "TxIn": [
     {
       "outpoint": {
@@ -36,7 +36,7 @@ The exit file is the same as the entry, except for:
 1. reason value
 2. time value
 
-The `time` value is the time the transaction *exited* the mempool. And the `reason` value is the reason the exit happened. It can be one of 7 possible values:
+The `time` value is the timestamp when the transaction *exited* the mempool. And the `reason` value is the reason the exit happened. It can be one of 7 possible values:
 * **UNKNOWN** Manually removed or unknown reason)
 * **EXPIRY** (Expired from mempool)
 * **SIZELIMIT** (Removed in size limiting)
